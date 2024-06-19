@@ -1,8 +1,8 @@
 import java.io.*;
 
 public class Welcome {
-    public static String name;
-    public static String phone;
+    private static String name;
+    private static String phone;
     static boolean quit = false;
 
     public static void main(String[] args) throws IOException {
@@ -10,12 +10,28 @@ public class Welcome {
         setMenu();
     }
 
+    public static void setName(String name) {
+        Welcome.name = name;
+    }
+
+    public static String getName() {
+        return Welcome.name;
+    }
+
+    public static void setPhone(String phone) {
+        Welcome.phone = phone;
+    }
+
+    public static String getPhone() {
+        return Welcome.phone;
+    }
+
     public static void getInfo() throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("당신의 이름을 입력하세요 : ");
-        name = br.readLine();
+        setName(br.readLine());
         System.out.print("연락처를 입력하세요 : ");
-        phone = br.readLine();
+        setPhone(br.readLine());
     }
 
     public static void checkNumber() throws IOException {
@@ -30,7 +46,7 @@ public class Welcome {
             System.out.println(num + "번을 선택했습니다.");
             switch (num) {
                 case 1:
-                    System.out.println("현재 고객님의 성함 : " + name + " 연락처 : " + phone);
+                    System.out.println("현재 고객님의 성함 : " + getName() + " 연락처 : " + getPhone());
                     break;
                 case 2:
                     System.out.println("장바구니 상품 목록 보기");
