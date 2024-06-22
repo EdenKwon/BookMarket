@@ -65,7 +65,7 @@ public class Welcome {
             System.out.println(num + "번을 선택했습니다.");
             switch (num) {
                 case 1:
-                    menuGuestInfo();
+                    menuGuestInfo(name, phone);
                     break;
                 case 2:
                     menuCartItemList();
@@ -93,8 +93,8 @@ public class Welcome {
     }
 
     
-    public static void menuGuestInfo() {
-        System.out.println("현재 고객님의 성함 : " + getName() + " 연락처 : " + getPhone());
+    public static void menuGuestInfo(String name, String phone) {
+        System.out.println("현재 고객님의 성함 : " + name + " 연락처 : " + phone);
     }
 
     public static void menuCartItemList() {
